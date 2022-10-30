@@ -13,3 +13,7 @@ variable "separator" {
 variable "length" {
     default = 1
 }
+
+variable "content" {
+  default = "The dog is a "
+}

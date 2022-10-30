@@ -4,13 +4,13 @@
 #     content = "The name is ${random_pet.pet_name.id}"
 # }
 
-resource "local_file" "pet" {
-    filename = var.filename
-    content = "The dog is a "
-    depends_on = [
-      random_pet.pet_name
-    ]
-}
+# resource "local_file" "pet" {
+#     filename = var.filename
+#     content = var.content
+#     depends_on = [
+#       random_pet.pet_name
+#     ]
+# }
 
 resource "random_pet" "pet_name" {
   prefix = var.adjective
