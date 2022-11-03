@@ -31,7 +31,7 @@ resource "random_pet" "pet_name" {
   # selected resources
   lifecycle {
     ignore_changes = [
-      prefix, lenght
+      prefix, length
     ]
   }
 }
