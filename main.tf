@@ -13,7 +13,7 @@
 # }
 
 resource "random_pet" "pet_name" {
-  prefix = var.adjective
+  prefix    = var.adjective
   separator = var.separator
-  length = var.length
+  length    = var.length
 }
