@@ -18,7 +18,12 @@ resource "random_pet" "pet_name" {
   length    = var.length
 
 # to ensure a new resource is first created before an old one is destroyed, use the block below.
+  # lifecycle {
+  #   create_before_destroy = true
+  # }
+
+  # this ensures the old resource isn't deleted
   lifecycle {
-    create_before_destroy = true
+    prevent_destroy = true
   }
 }
