@@ -16,4 +16,9 @@ resource "random_pet" "pet_name" {
   prefix    = var.adjective
   separator = var.separator
   length    = var.length
+
+# to ensure a new resource is first created before an old one is destroyed, use the block below.
+  lifecycle {
+    create_before_destroy = true
+  }
 }
