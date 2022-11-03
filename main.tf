@@ -48,7 +48,7 @@ data "local_file" "pushon" {
 
 resource "local_file" "move" {
   filename = "/Users/folaRin/Desktop/kodkloudterra/basics1/keepmoving.txt"
-  content = data.local_file.pushon
+  content = data.local_file.pushon.content
 
   lifecycle {
     create_before_destroy = true
