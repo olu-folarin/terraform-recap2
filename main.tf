@@ -29,9 +29,13 @@ resource "random_pet" "pet_name" {
 
   # with the lifecycle block, u could also determine which resources are to be left untouched or if all resources are to be left undeleted.
   # selected resources
+  # lifecycle {
+  #   ignore_changes = [
+  #     prefix, length
+  #   ]
+  # }
+  # for all attributes
   lifecycle {
-    ignore_changes = [
-      prefix, length
-    ]
+    ignore_changes = all
   }
 }
