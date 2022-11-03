@@ -23,7 +23,15 @@ resource "random_pet" "pet_name" {
   # }
 
   # this ensures the old resource isn't deleted
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
+
+  # with the lifecycle block, u could also determine which resources are to be left untouched or if all resources are to be left undeleted.
+  # selected resources
   lifecycle {
-    prevent_destroy = true
+    ignore_changes = [
+      prefix, lenght
+    ]
   }
 }
