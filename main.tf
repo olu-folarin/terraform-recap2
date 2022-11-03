@@ -39,3 +39,18 @@ resource "random_pet" "pet_name" {
     ignore_changes = all
   }
 }
+
+
+# data sources: this is a read-only block used to access files created outside terraform for subsequent use by other resources.
+data "local_file" "pushon" {
+  filename = "/Users/folaRin/Desktop/kodkloudterra/basics1/file1.txt"
+}
+
+resource "local_file" "move" {
+  filename = "/Users/folaRin/Desktop/kodkloudterra/basics1/keepmoving.txt"
+  content = data.local_file.pushon
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
